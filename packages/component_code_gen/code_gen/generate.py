@@ -63,7 +63,7 @@ def parse_common_files(app, component_type, custom_path=None):
 
     parsed_common_files = ""
     for common_file in file_list:
-        with open(common_file, 'r') as f:
+        with open(common_file, 'r', encoding='utf-8') as f:
             common_file = common_file.split(f"{app}{os.sep}")[1]
             parsed_common_files += f'### ../../{common_file}\n\n{f.read()}\n'
     return parsed_common_files
